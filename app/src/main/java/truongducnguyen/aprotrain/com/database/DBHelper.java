@@ -77,7 +77,7 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     public List<Mytask> getAllTask() {
-        List<Mytask> contactModels = new ArrayList<>();
+        List<Mytask> note = new ArrayList<>();
 
         String query = "SELECT * FROM " + TABLE_NOTE;
         Cursor cursor = this.database.rawQuery(query, null);
@@ -91,7 +91,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 mytask.setTaskContent(cursor.getString(2));
                 mytask.setImportant(Boolean.valueOf(cursor.getString(2)));
 
-                contactModels.add(mytask);
+                note.add(mytask);
                 cursor.moveToNext();
             }
         }
@@ -99,7 +99,7 @@ public class DBHelper extends SQLiteOpenHelper {
             cursor.close();
         }
 
-        return contactModels;
+        return note;
     }
 
     public void deleteTask(long contactId) {

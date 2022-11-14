@@ -20,7 +20,7 @@ import truongducnguyen.aprotrain.com.models.Mytask;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String TAG = MainActivity.class.getSimpleName();
+
 
     Button btnAddNote;
     ListView listView;
@@ -69,8 +69,8 @@ public class MainActivity extends AppCompatActivity {
             String title = edt_title.getText().toString();
             String content = edt_content.getText().toString();
             Boolean important = cb_important.isChecked();
+            Integer id = Math.toIntExact(Calendar.getInstance().getTimeInMillis() / 1000);
             if (!title.isEmpty() && !content.isEmpty()) {
-                Integer id = Math.toIntExact(Calendar.getInstance().getTimeInMillis() / 1000);
                 Mytask taskModel = new Mytask();
                 taskModel.setTaskId(id);
                 taskModel.setTaskTitle(title);
