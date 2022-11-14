@@ -20,7 +20,7 @@ public class TaskAdapter extends BaseAdapter {
     }
 
     @Override
-    public int getCount() {//Cho listview biết số lượng dòng sẽ được hiển thị
+    public int getCount() {
         return mytasks.size();
     }
 

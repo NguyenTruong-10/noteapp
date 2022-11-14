@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = MainActivity.class.getSimpleName();
 
-    Button btnAddNewContact;
+    Button btnAddNote;
     ListView listView;
     TaskAdapter taskAdapter;
     List<Mytask> mytasks;
@@ -50,8 +50,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void configView() {
-        btnAddNewContact = findViewById(R.id.btn_add_note);
-        listView = findViewById(R.id.list_view_contacts);
+        btnAddNote = findViewById(R.id.btn_add_note);
+        listView = findViewById(R.id.list_view_note);
         edt_content = findViewById(R.id.edt_content);
         edt_title = findViewById(R.id.edt_title);
         cb_important = findViewById(R.id.checkbox);
@@ -65,17 +65,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void addListener() {
-        btnAddNewContact.setOnClickListener(view -> {
+        btnAddNote.setOnClickListener(view -> {
             String title = edt_title.getText().toString();
             String content = edt_content.getText().toString();
-            Boolean iportant = cb_important.isChecked();
+            Boolean important = cb_important.isChecked();
             if (!title.isEmpty() && !content.isEmpty()) {
                 Integer id = Math.toIntExact(Calendar.getInstance().getTimeInMillis() / 1000);
                 Mytask taskModel = new Mytask();
                 taskModel.setTaskId(id);
                 taskModel.setTaskTitle(title);
                 taskModel.setTaskContent(content);
-                taskModel.setImportant(iportant);
+                taskModel.setImportant(important);
                 DBHelper database = (DBHelper) DBHelper.getInstance(MainActivity.this);
                 database.addTask(taskModel);
 
@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
                 edt_content.setText("");
             }else{
                 Toast.makeText(MainActivity.this,
-                        "Need to fill in all the information", Toast.LENGTH_SHORT).show();
+                        "Need to fill information", Toast.LENGTH_SHORT).show();
             }
 
         });

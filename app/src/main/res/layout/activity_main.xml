@@ -6,78 +6,83 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
-<!--    title-->
+    <!--    title-->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
         android:text="Tieu de"
         android:textSize="18sp"
-        android:layout_marginTop="15dp"
         android:textStyle="bold"
-        android:layout_marginStart="10dp"
 
-      />
+        />
+
     <EditText
         android:id="@+id/edt_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="3dp"
         android:layout_marginStart="10dp"
+        android:layout_marginTop="3dp"
         android:layout_marginEnd="10dp"
-        android:hint="Nhap tieu de"
-        />
-<!--    Content-->
+        android:hint="Nhap tieu de" />
+    <!--    Content-->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
         android:text="Noi Dung"
         android:textSize="18sp"
-        android:layout_marginTop="15dp"
         android:textStyle="bold"
-        android:layout_marginStart="10dp"
 
         />
+
     <EditText
         android:id="@+id/edt_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="3dp"
         android:layout_marginStart="10dp"
+        android:layout_marginTop="3dp"
         android:layout_marginEnd="10dp"
-        android:hint="Nhap tieu de"
-        />
+        android:hint="Nhap tieu de" />
+
     <CheckBox
         android:id="@+id/checkbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:text="Cong viec quan trong"
         android:layout_marginStart="10dp"
-        />
+        android:layout_marginTop="6dp"
+        android:text="Cong viec quan trong" />
+
     <Button
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center"
-    android:layout_marginTop="10dp"
-    android:text="Them moi cong viec"
-    android:textAllCaps="true"
-    android:id="@+id/btn_add_note"
-    />
+        android:id="@+id/btn_add_note"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:background="@color/teal_200"
+        android:text="Them moi cong viec"
+        android:paddingStart="7dp"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"
+        android:paddingEnd="7dp"
+        android:textAllCaps="true" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
         android:text="Cong viec cua ban: "
         android:textAllCaps="false"
         android:textColor="@color/black"
         android:textSize="18sp" />
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/list_view_contacts"
-        />
 
+    <ListView
+        android:id="@+id/list_view_note"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 
 </LinearLayout>
